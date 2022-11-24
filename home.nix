@@ -16,6 +16,25 @@
     pkgs.graphviz-nox
   ];
 
+  home.file.".vimrc".source = ./vimrc;
+
+  # Git config using Home Manager modules
+  programs.git = {
+    enable = true;
+    userName = "Stephen Harris";
+    userEmail = "steveofar@hotmail.com";
+    aliases = {
+      c = "commit";
+      co = "checkout";
+      s = "status";
+    };
+    extraConfig = {
+      pull.ff = "only";
+      init.defaultBranch = "main";
+    };
+  };
+
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
