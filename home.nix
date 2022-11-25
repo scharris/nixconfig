@@ -11,6 +11,7 @@
     pkgs.jdk17_headless
     pkgs.maven
     pkgs.httpie
+    pkgs.bashInteractive
     pkgs.powershell
     pkgs.htop
     pkgs.graphviz-nox
@@ -18,6 +19,9 @@
 
   home.file.".vimrc".source = ./vimrc;
   home.file.".editorconfig".source = ./editorconfig;
+
+  programs.bash.enable = true;
+  programs.zsh.enable = true;
 
   # Git config using Home Manager modules
   programs.git = {
