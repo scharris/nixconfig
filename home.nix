@@ -17,6 +17,7 @@
   ];
 
   home.file.".vimrc".source = ./vimrc;
+  home.file.".editorconfig".source = ./editorconfig;
 
   # Git config using Home Manager modules
   programs.git = {
