@@ -13,8 +13,8 @@
     pkgs.httpie
     pkgs.bashInteractive
     pkgs.powershell
+    pkgs.ripgrep
     pkgs.htop
-    pkgs.graphviz-nox
   ];
 
   home.file.".vimrc".source = ./vimrc;
@@ -22,6 +22,10 @@
 
   programs.bash.enable = true;
   programs.zsh.enable = true;
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
 
   # Git config using Home Manager modules
   programs.git = {
