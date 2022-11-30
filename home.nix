@@ -20,7 +20,14 @@
   home.file.".vimrc".source = ./vimrc;
   home.file.".editorconfig".source = ./editorconfig;
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit -m";
+    };
+  };
 
   programs.zsh = {
     enable = true;
