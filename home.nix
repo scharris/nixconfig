@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 
+let commonShellAliases =
+  {
+    gs = "git status";
+    ga = "git add";
+    gc = "git commit -m";
+  };
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -22,11 +29,7 @@
 
   programs.bash = {
     enable = true;
-    shellAliases = {
-      gs = "git status";
-      ga = "git add";
-      gc = "git commit -m";
-    };
+    shellAliases = commonShellAliases;
   };
 
   programs.zsh = {
@@ -36,11 +39,7 @@
       theme = "gentoo";
       plugins = [ "git" "cp" ];
     };
-    shellAliases = {
-      gs = "git status";
-      ga = "git add";
-      gc = "git commit -m";
-    };
+    shellAliases = commonShellAliases;
   };
 
   programs.direnv.enable = true;
