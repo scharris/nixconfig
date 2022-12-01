@@ -5,6 +5,8 @@ let commonShellAliases =
     gs = "git status";
     ga = "git add";
     gc = "git commit -m";
+    gd = "git diff";
+    gdc = "git diff --cached";
   };
 in
 {
