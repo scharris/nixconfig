@@ -16,6 +16,8 @@ in
   home.username = "sharris";
   home.homeDirectory = "/Users/sharris";
 
+  manual.manpages.enable = false;
+
   home.packages = [
     pkgs.nodejs-18_x
     pkgs.jdk17_headless
@@ -25,6 +27,8 @@ in
     pkgs.powershell
     pkgs.ripgrep
     pkgs.htop
+    pkgs.nushell
+    pkgs.httpie
   ];
 
   home.file.".vimrc".source = ./vimrc;
@@ -68,7 +72,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
