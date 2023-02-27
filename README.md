@@ -6,4 +6,9 @@
 cd $HOME/.config/nixpkgs && home-manager switch --flake .#macs
 ```
 
+Or, on any host after installing Home Manager (and enabling experimental flakes):
+
+```sh
+home-manager switch --flake github:scharris/nixconfig#macs
+```
 
