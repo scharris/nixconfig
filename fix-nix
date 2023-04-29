@@ -1,4 +1,4 @@
-cat > /etc/zshrc <<EOF
+cat >> /etc/zshrc <<EOF
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then

@@ -1,5 +1,10 @@
 # Home Manager Configuration
 
+## Update packages
+```sh
+nix-channel --update
+```
+
 ## Apply updates made to `home.nix` or `flake.nix`:
 
 ```sh

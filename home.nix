@@ -1,3 +1,6 @@
+# nix-channel --update 
+# home-manager switch --flake ./#macs 
+#
 { config, pkgs, ... }:
 
 let commonShellAliases =
@@ -22,6 +25,8 @@ in
     pkgs.nodejs-18_x
     pkgs.jdk17_headless
     pkgs.maven
+    pkgs.kind
+    pkgs.kubectl
     pkgs.httpie
     pkgs.bashInteractive
     pkgs.powershell
@@ -29,6 +34,7 @@ in
     pkgs.htop
     pkgs.nushell
     pkgs.httpie
+    pkgs.exa
   ];
 
   home.file.".vimrc".source = ./vimrc;
