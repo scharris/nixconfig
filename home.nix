@@ -1,5 +1,5 @@
 # nix-channel --update 
-# home-manager switch --flake ./#macs 
+# home-manager switch --flake ./#linux
 #
 { config, pkgs, ... }:
 
@@ -11,17 +11,18 @@ let commonShellAliases =
     gd = "git diff";
     gds = "git diff --staged";
     gdh = "git diff HEAD";
+    kc = "kubectl";
   };
 in
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "sharris";
-  home.homeDirectory = "/Users/sharris";
+  home.username = if pkgs.stdenv.isLinux then "scharris" else "sharris";
+  home.homeDirectory = if pkgs.stdenv.isLinux then "/home/scharris" else "/Users/sharris";
 
   manual.manpages.enable = false;
 
   home.packages = [
+    pkgs.vim
+    pkgs.git
     pkgs.nodejs-18_x
     pkgs.jdk17_headless
     pkgs.maven
@@ -34,7 +35,6 @@ in
     pkgs.htop
     pkgs.nushell
     pkgs.httpie
-    pkgs.exa
   ];
 
   home.file.".vimrc".source = ./vimrc;

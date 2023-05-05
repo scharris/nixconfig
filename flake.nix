@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of scharris";
+  description = "Home Manager Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -10,19 +10,18 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
-    let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations.macs = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
+    {
+      homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./home.nix
         ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+      };
+      homeConfigurations.mac = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        modules = [
+          ./home.nix
+        ];
       };
     };
 }
