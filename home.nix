@@ -15,8 +15,8 @@ let commonShellAliases =
   };
 in
 {
-  home.username = if pkgs.stdenv.isLinux then "scharris" else "sharris";
-  home.homeDirectory = if pkgs.stdenv.isLinux then "/home/scharris" else "/Users/sharris";
+  home.username = "sharris";
+  home.homeDirectory = if pkgs.stdenv.isLinux then "/home/sharris" else "/Users/sharris";
 
   manual.manpages.enable = false;
 
