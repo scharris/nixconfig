@@ -53,6 +53,9 @@ in
       plugins = [ "git" "cp" ];
     };
     shellAliases = commonShellAliases;
+    initExtra = ''
+      [ -f "/Users/sharris/.ghcup/env" ] && source "/Users/sharris/.ghcup/env" # ghcup-env%
+    '';
   };
 
   programs.direnv.enable = true;
