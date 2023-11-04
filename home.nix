@@ -24,7 +24,7 @@ in
     pkgs.vim
     pkgs.git
     pkgs.nodejs-18_x
-    pkgs.jdk17_headless
+    pkgs.jdk21_headless
     pkgs.maven
     pkgs.kind
     pkgs.kubectl
@@ -34,11 +34,13 @@ in
     pkgs.ripgrep
     pkgs.htop
     pkgs.nushell
-    pkgs.httpie
+    pkgs.postgresql_15
+    pkgs.elixir
   ];
 
   home.file.".vimrc".source = ./vimrc;
   home.file.".editorconfig".source = ./editorconfig;
+  #home.file.".ghci".source = ./ghci;
 
   programs.bash = {
     enable = true;
